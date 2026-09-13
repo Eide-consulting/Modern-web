@@ -1,0 +1,20 @@
+---
+layout: base.njk
+ogType: article
+---
+<article class="post">
+  <header class="post-header">
+    <h1>{{ title }}</h1>
+    <p class="post-meta">
+      <time datetime="{{ page.date | isoDate }}">{{ page.date | readableDate }}</time>
+      {% if tags %}
+        · {% for tag in tags %}<span class="tag">{{ tag }}</span>{% endfor %}
+      {% endif %}
+    </p>
+  </header>
+
+  {{ content | safe }}
+
+  <hr />
+  <p class="post-footer"><a href="/">← All posts</a></p>
+</article>

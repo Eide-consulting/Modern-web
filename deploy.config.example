@@ -1,0 +1,7 @@
+# Copy this file to `deploy.config` and fill in your domene.shop details.
+# `deploy.config` is gitignored — never commit real connection details.
+# Load it before running the deploy commands in DEPLOY.md:  source ./deploy.config
+
+DEPLOY_USER="your-ssh-username"
+DEPLOY_HOST="ssh.domene.shop"
+DEPLOY_PATH="/home/your-ssh-username/www"

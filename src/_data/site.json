@@ -1,0 +1,11 @@
+{
+  "title": "Notes to myself",
+  "description": "Arnfinn Eide — notes on Azure, automation, and infrastructure.",
+  "url": "https://arnfinn.cloud",
+  "author": {
+    "name": "Arnfinn Eide",
+    "linkedin": "https://www.linkedin.com/in/arnfinn-eide-975ba3b3/"
+  },
+  "language": "en",
+  "ogImage": "/assets/images/og-default.png"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "arnfinn-cloud",
+  "version": "1.0.0",
+  "description": "Static site for arnfinn.cloud (Eleventy)",
+  "type": "module",
+  "scripts": {
+    "serve": "eleventy --serve",
+    "build": "eleventy",
+    "clean": "rm -rf _site"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0"
+  }
+}

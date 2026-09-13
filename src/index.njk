@@ -1,0 +1,19 @@
+---
+layout: base.njk
+---
+<section class="intro">
+  <p>Hi — I'm {{ site.author.name }}. This is where I keep notes on Azure, automation, and infrastructure I don't want to forget.</p>
+</section>
+
+<section class="post-list">
+  <h2>Posts</h2>
+  <ul>
+    {% for post in collections.posts %}
+      <li>
+        <a class="post-list-title" href="{{ post.url }}">{{ post.data.title }}</a>
+        <time datetime="{{ post.date | isoDate }}">{{ post.date | readableDate }}</time>
+        {% if post.data.description %}<p class="post-list-desc">{{ post.data.description }}</p>{% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+</section>
