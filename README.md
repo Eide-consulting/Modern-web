@@ -49,3 +49,14 @@ src/
 - RSS/Atom feed, sitemap, robots.txt
 - Open Graph / Twitter Card metadata, favicon
 - Light/dark theme via `prefers-color-scheme`
+
+## Known issues / TODO
+
+- **Security override for `brace-expansion`** — `package.json` pins
+  `brace-expansion` to `1.1.21` via `overrides` to patch a high-severity
+  ReDoS/DoS advisory ([GHSA-q2hr-2g5m-vwhr](https://github.com/advisories/GHSA-q2hr-2g5m-vwhr)).
+  The vulnerable version is pulled in transitively through
+  `@11ty/eleventy@3 → @11ty/recursive-copy@4 → minimatch@3`. The proper fix
+  ships in `@11ty/recursive-copy@5` (used by Eleventy 4). **Remove this
+  override once the project upgrades to Eleventy 4**, then re-run `npm audit`
+  to confirm the chain is clean.
