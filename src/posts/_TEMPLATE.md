@@ -6,10 +6,12 @@ tags:
   - azure
 # Optional featured image (used as the social/OG preview). Remove if none.
 # image: /assets/images/your-post-slug/cover.png
-# Set draft: true to keep this out of the build, home list, and feed until ready.
+# Exclude from the home list, feed, and sitemap while drafting.
 draft: true
-# Keep this template itself from being published:
+# Prevent page generation while drafting. Remove this line to publish;
+# also remove draft: true or set draft: false.
 permalink: false
+# Remove this line when copying the template for a real post:
 eleventyExcludeFromCollections: true
 ---
 

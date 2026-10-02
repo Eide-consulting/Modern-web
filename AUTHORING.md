@@ -24,7 +24,8 @@ Every post starts with a YAML block (see `src/posts/_TEMPLATE.md`):
 | `description` | yes      | 1–2 sentences. Used on the home list, RSS, and OG previews.  |
 | `tags`        | no       | A list, e.g. `azure`, `powershell`. No categories.           |
 | `image`       | no       | Featured image path, used as the social/OG preview image.    |
-| `draft`       | no       | `true` hides the post from the build, home list, and feed.   |
+| `draft`       | no       | `true` excludes the post from the home list, feed, and sitemap; it does not prevent page generation. |
+| `permalink`   | no       | Set to `false` to prevent page generation while drafting. Remove the line to use the automatic URL; do not set it to `true`. |
 
 The `layout` and `permalink` are set automatically for everything in
 `src/posts/` (see `src/posts/posts.json`) — you don't repeat them per post.
@@ -37,8 +38,14 @@ The `layout` and `permalink` are set automatically for everything in
   absolute path, e.g. `![alt](/assets/images/<slug>/screenshot.png)`.
 - **Code blocks:** use fenced blocks with a language for highlighting, e.g.
   ` ```powershell `, ` ```kql `, ` ```yaml `, ` ```bicep `.
-- **Drafts:** set `draft: true` while writing; remove it (or set `false`) to
-  publish.
+- **Drafts:** set both `draft: true` and `permalink: false` to keep a post
+  unpublished. This prevents page generation in both `npm run build` and
+  `npm run serve`, and excludes the post from the home list, feed, and sitemap.
+- **Publishing:** remove `permalink: false` and remove `draft: true` (or set
+  `draft: false`). The page URL is then assigned automatically from the filename.
+- **Using the template:** when copying `src/posts/_TEMPLATE.md` for a real post,
+  remove `eleventyExcludeFromCollections: true`; it is only there to exclude
+  the template itself from collections.
 
 ## Commands
 
